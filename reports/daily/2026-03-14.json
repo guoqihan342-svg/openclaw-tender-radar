@@ -1,0 +1,28 @@
+{
+  "date": "2026-03-14",
+  "generated_at": "2026-03-15 12:09:53",
+  "summary": {
+    "dau": 32,
+    "dau_change": 10.34,
+    "new_users": 3,
+    "trial_users": 1,
+    "paid_users": 2,
+    "revenue": 1998,
+    "new_tenders": 3,
+    "total_tenders": 156
+  },
+  "email_metrics": {
+    "sent": 33,
+    "opened": 10,
+    "replied": 4,
+    "open_rate": 30.3,
+    "reply_rate": 12.12
+  },
+  "conversion": {
+    "trial_rate": 63.11,
+    "pay_rate": 49.23,
+    "total_users": 103,
+    "trial_users": 65,
+    "paid_users": 32
+  }
+}

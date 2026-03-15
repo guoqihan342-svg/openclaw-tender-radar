@@ -1,0 +1,44 @@
+{
+  "dau": {
+    "name": "日活跃用户",
+    "min": 10,
+    "max": 1000,
+    "description": "DAU低于10人表示系统可能存在严重问题"
+  },
+  "new_users": {
+    "name": "新增用户",
+    "min": 5,
+    "max": 500,
+    "description": "每日新增用户低于5人需要关注"
+  },
+  "revenue": {
+    "name": "日收入",
+    "min": 100,
+    "max": 100000,
+    "description": "当日收入低于100元触发告警"
+  },
+  "email_open_rate": {
+    "name": "邮件打开率",
+    "min": 10,
+    "max": 100,
+    "description": "邮件打开率低于10%表示内容质量问题"
+  },
+  "email_reply_rate": {
+    "name": "邮件回复率",
+    "min": 3,
+    "max": 50,
+    "description": "邮件回复率低于3%需要优化转化策略"
+  },
+  "new_tenders": {
+    "name": "新增招标",
+    "min": 1,
+    "max": 1000,
+    "description": "当日新增招标数为0表示数据采集中断"
+  },
+  "conversion_rate": {
+    "name": "付费转化率",
+    "min": 5,
+    "max": 50,
+    "description": "总体转化率低于5%表示产品问题严重"
+  }
+}

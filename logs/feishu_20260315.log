@@ -1,0 +1,27 @@
+[2026-03-15 12:01:55] [feishu_sender] ==================================================
+[2026-03-15 12:01:55] [feishu_sender] 开始发送飞书日报
+[2026-03-15 12:01:55] [feishu_sender] ==================================================
+[2026-03-15 12:01:55] [feishu_sender] 读取日报: /home/daministrator/.openclaw/workspace/openclaw-income-factory/reports/daily/daily_report_20260315.md (1852 字)
+[2026-03-15 12:01:55] [feishu_sender] 使用卡片消息格式
+[2026-03-15 12:01:55] [feishu_sender] 飞书 Webhook URL 未配置，跳过发送
+[2026-03-15 12:01:55] [feishu_sender] 日报发送失败: WEBHOOK_URL 未配置
+[2026-03-15 12:01:55] [feishu_sender] 尝试退化为文本消息...
+[2026-03-15 12:01:55] [feishu_sender] 飞书 Webhook URL 未配置，跳过发送
+[2026-03-15 12:06:03] [feishu_sender] ==================================================
+[2026-03-15 12:06:03] [feishu_sender] 开始发送飞书日报
+[2026-03-15 12:06:03] [feishu_sender] ==================================================
+[2026-03-15 12:06:03] [feishu_sender] 读取日报: /home/daministrator/.openclaw/workspace/openclaw-income-factory/reports/daily/daily_report_20260315.md (1852 字)
+[2026-03-15 12:06:03] [feishu_sender] 使用卡片消息格式
+[2026-03-15 12:06:03] [feishu_sender] 飞书 Webhook URL 未配置，跳过发送
+[2026-03-15 12:06:03] [feishu_sender] 日报发送失败: WEBHOOK_URL 未配置
+[2026-03-15 12:06:03] [feishu_sender] 尝试退化为文本消息...
+[2026-03-15 12:06:03] [feishu_sender] 飞书 Webhook URL 未配置，跳过发送
+[2026-03-15 12:07:56] [feishu_sender] ==================================================
+[2026-03-15 12:07:56] [feishu_sender] 开始发送飞书日报
+[2026-03-15 12:07:56] [feishu_sender] ==================================================
+[2026-03-15 12:07:56] [feishu_sender] 读取日报: /home/daministrator/.openclaw/workspace/openclaw-income-factory/reports/daily/daily_report_20260315.md (1980 字)
+[2026-03-15 12:07:56] [feishu_sender] 使用卡片消息格式
+[2026-03-15 12:07:56] [feishu_sender] 飞书 Webhook URL 未配置，跳过发送
+[2026-03-15 12:07:56] [feishu_sender] 日报发送失败: WEBHOOK_URL 未配置
+[2026-03-15 12:07:56] [feishu_sender] 尝试退化为文本消息...
+[2026-03-15 12:07:56] [feishu_sender] 飞书 Webhook URL 未配置，跳过发送

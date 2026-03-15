@@ -1,0 +1,49 @@
+[
+  {
+    "timestamp": "2026-03-15T12:08:59.840746",
+    "date": "2026-03-14",
+    "alerts": [
+      {
+        "level": "critical",
+        "message": "DAU过低: 0 (最低: 10)"
+      },
+      {
+        "level": "critical",
+        "message": "新增用户过低: 0 (最低: 5)"
+      },
+      {
+        "level": "critical",
+        "message": "收入过低: 0 (最低: 100)"
+      },
+      {
+        "level": "critical",
+        "message": "邮件打开率过低: 0 (最低: 10)"
+      },
+      {
+        "level": "critical",
+        "message": "邮件回复率过低: 0 (最低: 3)"
+      },
+      {
+        "level": "critical",
+        "message": "新增招标过低: 0 (最低: 1)"
+      },
+      {
+        "level": "critical",
+        "message": "转化率过低: 0 (最低: 5)"
+      }
+    ],
+    "stats": {
+      "date": "2026-03-14",
+      "dau": 0,
+      "new_users": 0,
+      "revenue": 0,
+      "emails_sent": 0,
+      "emails_opened": 0,
+      "emails_replied": 0,
+      "open_rate": 0,
+      "reply_rate": 0,
+      "new_tenders": 0,
+      "conversion_rate": 0
+    }
+  }
+]

@@ -1,0 +1,48 @@
+{
+  "month": "2026年February",
+  "year": 2026,
+  "month_num": 2,
+  "start_date": "2026-02-01",
+  "end_date": "2026-02-28",
+  "generated_at": "2026-03-15 12:08:57",
+  "summary": {
+    "new_users": 0,
+    "new_users_change": 0,
+    "new_trials": 0,
+    "new_paid": 0,
+    "mrr": 0,
+    "mrr_change": 0,
+    "new_tenders": 0,
+    "new_tenders_change": 0
+  },
+  "retention": {
+    "d30_retention": 0,
+    "base_users": 0
+  },
+  "email_metrics": {
+    "sent": 0,
+    "opened": 0,
+    "replied": 0,
+    "open_rate": 0,
+    "reply_rate": 0,
+    "by_channel": {}
+  },
+  "subscription": {
+    "by_plan": []
+  },
+  "financial": {
+    "arpu": 0,
+    "ltv": 0,
+    "total_revenue": 0,
+    "total_paid": 0,
+    "pay_conversion_rate": 0
+  },
+  "cumulative": {
+    "total_users": 0,
+    "total_trials": 0,
+    "total_paid": 0,
+    "total_revenue": 0,
+    "total_tenders": 10
+  },
+  "arr": 0
+}
