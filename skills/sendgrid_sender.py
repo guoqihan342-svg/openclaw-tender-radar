@@ -20,20 +20,20 @@ except ImportError:
 import requests
 
 # 配置
-CONFIG_FILE = "/home/daministrator/.openclaw/workspace/openclaw-income-factory/config/sendgrid.conf"
+CONFIG_FILE = os.environ.get('SENDGRID_CONFIG_FILE', os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config', 'sendgrid.conf'))
+FROM_EMAIL = os.environ.get('SENDGRID_FROM_EMAIL') or os.environ.get('FROM_EMAIL', '')
 
 def load_api_key():
     """加载SendGrid API Key"""
-    api_key = None
+    api_key = os.environ.get('SENDGRID_API_KEY')
+    if api_key:
+        return api_key
     if os.path.exists(CONFIG_FILE):
         with open(CONFIG_FILE, 'r') as f:
             for line in f:
                 if 'SENDGRID_API_KEY=' in line and not line.startswith('#'):
                     api_key = line.split('=', 1)[1].strip()
                     break
-    # 也检查环境变量
-    if not api_key:
-        api_key = os.environ.get('SENDGRID_API_KEY')
     return api_key
 
 def send_email_http(api_key, to_email, subject, body):
@@ -51,7 +51,7 @@ def send_email_http(api_key, to_email, subject, body):
                 "to": [{"email": to_email}]
             }
         ],
-        "from": {"email": "guoqihan342@gmail.com", "name": "招标雷达"},
+        "from": {"email": FROM_EMAIL, "name": "招标雷达"},
         "subject": subject,
         "content": [
             {
@@ -82,7 +82,7 @@ def send_email_sdk(api_key, to_email, subject, body):
         sg = SendGridAPIClient(api_key)
         
         message = Mail(
-            from_email=Email('guoqihan342@gmail.com', '招标雷达'),
+            from_email=Email(FROM_EMAIL, '招标雷达'),
             to_emails=To(to_email),
             subject=subject,
             plain_text_content=Content('text/plain', body)
@@ -110,6 +110,10 @@ def send_email(to_email, subject, body):
         print(f"   请编辑: {CONFIG_FILE}")
         return False
     
+    if not FROM_EMAIL:
+        print('❌ 未配置 SENDGRID_FROM_EMAIL 或 FROM_EMAIL')
+        return False
+
     if SENDGRID_AVAILABLE:
         return send_email_sdk(api_key, to_email, subject, body)
     else:
@@ -154,6 +158,7 @@ https://openclaw-tender-radar.vercel.app/payment/
 def test_sendgrid():
     """测试SendGrid"""
     api_key = load_api_key()
+    test_email = os.environ.get('TEST_EMAIL') or FROM_EMAIL
     
     if not api_key:
         print("❌ 未配置SendGrid API Key")
@@ -165,15 +170,18 @@ def test_sendgrid():
         print("3. Create API Key → Full Access")
         print("4. 复制Key（只显示一次）")
         return False
+    if not FROM_EMAIL or not test_email:
+        print("❌ 未配置 SENDGRID_FROM_EMAIL（或 FROM_EMAIL）和测试收件地址")
+        return False
     
     print("🧪 测试SendGrid邮件发送...")
-    print(f"   API Key: {api_key[:10]}...")
-    print(f"   发件人: guoqihan342@gmail.com")
-    print(f"   收件人: guoqihan342@gmail.com")
+    print("   API Key: 已配置（内容不显示）")
+    print(f"   发件人: {FROM_EMAIL}")
+    print(f"   收件人: {test_email}")
     print()
     
     result = send_email(
-        to_email="guoqihan342@gmail.com",
+        to_email=test_email,
         subject="招标雷达 - SendGrid测试",
         body="这是一封测试邮件。如果收到，说明SendGrid配置成功！\n\n发送时间: " + datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     )

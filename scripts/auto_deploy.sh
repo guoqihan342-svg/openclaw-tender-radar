@@ -19,8 +19,13 @@ cd "$PROJECT_DIR"
 if [ ! -d ".git" ]; then
     echo "📦 步骤1: 初始化 Git 仓库..."
     git init
-    git config user.email "guoqihan342@gmail.com"
-    git config user.name "guoqihan342"
+    if [ -n "${GIT_AUTHOR_EMAIL:-}" ]; then
+        git config user.email "$GIT_AUTHOR_EMAIL"
+    elif ! git config user.email >/dev/null 2>&1; then
+        echo "❌ 请先设置 GIT_AUTHOR_EMAIL，或配置 git user.email"
+        exit 1
+    fi
+    git config user.name "${GIT_AUTHOR_NAME:-guoqihan342}"
 else
     echo "✅ Git 仓库已存在"
 fi
@@ -52,7 +57,7 @@ echo ""
 echo "下一步（请在浏览器中完成）:"
 echo ""
 echo "1. 访问 https://vercel.com/dashboard"
-echo "   用 guoqihan342@gmail.com 登录"
+echo "   使用你自己的 Vercel 账号登录"
 echo ""
 echo "2. 点击 'Add New Project'"
 echo "   选择 'Import Git Repository'"
