@@ -51,7 +51,7 @@ git push -u origin main
 ### 步骤3: Vercel 连接 GitHub（1分钟）
 
 1. 访问 https://vercel.com/dashboard
-2. 用 guoqihan342@gmail.com 登录
+2. 使用你自己的 Vercel 账号登录
 3. 点击 **Add New Project**
 4. 选择 **Import Git Repository**
 5. 选择 `openclaw-tender-radar` 仓库

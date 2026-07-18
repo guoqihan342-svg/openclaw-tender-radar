@@ -121,8 +121,8 @@
 | 文件 | 需要的内容 |
 |------|-----------|
 | `config/feishu.conf` | 飞书Webhook地址 |
-| `config/sendgrid.conf` | SendGrid API Key |
-| `config/email.conf` | 备用邮箱配置 |
+| `config/sendgrid.conf.example` | SendGrid 本地配置模板（真实配置文件不提交） |
+| `config/email.conf.example` | 备用邮箱配置模板（真实配置文件不提交） |
 
 ---
 

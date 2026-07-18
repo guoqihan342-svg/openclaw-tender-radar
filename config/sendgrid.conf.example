@@ -1,0 +1,4 @@
+# Optional local SendGrid configuration.
+# Copy this file to sendgrid.conf, fill it locally, and never commit that file.
+# SENDGRID_API_KEY from the environment takes precedence.
+SENDGRID_API_KEY=

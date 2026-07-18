@@ -1,8 +1,7 @@
 # OpenClaw 招标雷达 - Vercel 部署指南
 
 ## 账号信息
-- **Vercel账号**: guoqihan342-4149
-- **邮箱**: guoqihan342@gmail.com
+- 使用你自己的 Vercel 账号登录，不要在仓库中记录登录邮箱或 Token
 
 ---
 
@@ -19,7 +18,7 @@ bash ../scripts/deploy_vercel.sh
 
 运行后会提示浏览器登录：
 1. 按回车打开浏览器
-2. 用 guoqihan342@gmail.com 登录
+2. 使用你自己的 Vercel 账号登录
 3. 授权 CLI 访问
 
 ### 步骤3: 完成部署
@@ -55,7 +54,7 @@ git push -u origin main
 ### 步骤3: Vercel 连接 GitHub
 
 1. 访问 https://vercel.com/dashboard
-2. 用 guoqihan342@gmail.com 登录
+2. 使用你自己的 Vercel 账号登录
 3. 点击 "Add New Project"
 4. 选择 GitHub 仓库 `openclaw-tender-radar`
 5. 点击 Deploy
@@ -83,7 +82,7 @@ zip -r site-deploy.zip site/
 ### 步骤2: Vercel 网页上传
 
 1. 访问 https://vercel.com/dashboard
-2. 用 guoqihan342@gmail.com 登录
+2. 使用你自己的 Vercel 账号登录
 3. 点击 "Add New Project"
 4. 选择 "Import Git Repository" 旁边的下拉箭头
 5. 选择 "Upload"（上传）

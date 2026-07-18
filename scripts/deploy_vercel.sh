@@ -1,9 +1,7 @@
 #!/bin/bash
-# Vercel 部署脚本 - 使用 guoqihan342 账号
+# Vercel 部署脚本
 
 echo "🚀 OpenClaw 招标雷达 - Vercel 部署脚本"
-echo "账号: guoqihan342-4149"
-echo "邮箱: guoqihan342@gmail.com"
 echo ""
 
 # 检查是否在 site 目录
@@ -19,14 +17,17 @@ npm install -g vercel@latest
 echo ""
 echo "🔐 步骤2: 登录 Vercel"
 echo "   请在浏览器中完成登录"
-echo "   使用邮箱: guoqihan342@gmail.com"
 vercel login
 
 echo ""
 echo "🚀 步骤3: 部署网站"
 echo "   项目名: openclaw-tender-radar"
 echo "   部署到生产环境"
-vercel --prod --yes --scope=guoqihan342-4149
+if [ -n "${VERCEL_SCOPE:-}" ]; then
+    vercel --prod --yes --scope="$VERCEL_SCOPE"
+else
+    vercel --prod --yes
+fi
 
 echo ""
 echo "✅ 部署完成!"

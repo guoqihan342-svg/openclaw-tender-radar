@@ -1,0 +1,8 @@
+# Optional local SMTP configuration.
+# Copy this file to email.conf, fill it locally, and never commit that file.
+# Environment variables with the same names take precedence.
+SMTP_HOST=smtp.qq.com
+SMTP_PORT=465
+SMTP_USER=
+SMTP_PASS=
+FROM_EMAIL=

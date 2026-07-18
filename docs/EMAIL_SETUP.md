@@ -11,16 +11,19 @@
 
 ```bash
 export SMTP_HOST=smtp.qq.com
-export SMTP_PORT=587
-export SMTP_USER=你的QQ号@qq.com
-export SMTP_PASS=你的授权码
-export FROM_EMAIL=你的QQ号@qq.com
+export SMTP_PORT=465
+export SMTP_USER=sender@example.com
+export FROM_EMAIL=sender@example.com
+read -rsp 'SMTP 授权码: ' SMTP_PASS && export SMTP_PASS
 ```
+
+也可以复制 `config/email.conf.example` 为 `config/email.conf` 后在本机填写。
+`config/email.conf` 已加入 `.gitignore`，不要把真实授权码提交到仓库。
 
 ### 步骤3: 测试发送
 
-```python
-python3 scripts/test_email.py
+```bash
+python3 skills/email_sender.py --test
 ```
 
 ---
@@ -37,7 +40,7 @@ Settings → API Keys → Create API Key
 
 ```bash
 export SENDGRID_API_KEY=你的API_KEY
-export FROM_EMAIL=你的邮箱@example.com
+export SENDGRID_FROM_EMAIL=sender@example.com
 ```
 
 ---
@@ -64,33 +67,7 @@ https://resend.com
 
 ```bash
 cd ~/openclaw-income-factory
-
-# 测试邮件发送
-python3 -c "
-import smtplib
-from email.mime.text import MIMEText
-
-# 配置
-smtp_host = 'smtp.qq.com'
-smtp_port = 587
-smtp_user = '你的QQ@qq.com'
-smtp_pass = '你的授权码'
-
-# 创建邮件
-msg = MIMEText('这是测试邮件')
-msg['Subject'] = '招标雷达 - 测试'
-msg['From'] = smtp_user
-msg['To'] = '你的测试邮箱@example.com'
-
-# 发送
-server = smtplib.SMTP(smtp_host, smtp_port)
-server.starttls()
-server.login(smtp_user, smtp_pass)
-server.send_message(msg)
-server.quit()
-
-print('邮件发送成功！')
-"
+python3 skills/email_sender.py --test
 ```
 
 配置完成后，系统就能自动发送欢迎邮件和日报了！

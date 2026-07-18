@@ -1,0 +1,10 @@
+.env
+.env.*
+!.env.example
+
+# Local credential files. Commit only the corresponding *.example files.
+config/email.conf
+config/sendgrid.conf
+
+__pycache__/
+*.py[cod]
