@@ -11,13 +11,15 @@ import os
 # QQ邮箱配置
 SMTP_HOST = 'smtp.qq.com'
 SMTP_PORT = 587  # TLS端口
-SMTP_USER = 'guoqihan342@qq.com'
-SMTP_PASS = 'szxlwxemuefebeji'
-FROM_EMAIL = 'guoqihan342@qq.com'
+SMTP_USER = os.environ.get('SMTP_USER', '')
+SMTP_PASS = os.environ.get('SMTP_PASS', '')
+FROM_EMAIL = os.environ.get('FROM_EMAIL') or SMTP_USER
 
 def send_email(to_email, subject, body):
     """发送邮件 - TLS方式"""
     try:
+        if not SMTP_USER or not SMTP_PASS or not FROM_EMAIL:
+            raise ValueError('缺少 SMTP_USER、SMTP_PASS 或 FROM_EMAIL 配置')
         # 创建邮件
         msg = MIMEText(body, 'plain', 'utf-8')
         msg['Subject'] = subject
